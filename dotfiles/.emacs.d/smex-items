@@ -1,0 +1,25 @@
+
+;; ----- smex-history -----
+(
+ load-theme
+ company-mode
+ package-install
+ sclang-server-boot
+ sclang-recompile
+ sclang-start
+ run-tidal
+)
+
+;; ----- smex-data -----
+(
+ (load-theme . 16)
+ (package-install . 2)
+ (haskell-mode . 2)
+ (package-list-packages-no-fetch . 1)
+ (package-delete . 1)
+ (run-tidal . 1)
+ (sclang-start . 1)
+ (sclang-recompile . 1)
+ (sclang-server-boot . 2)
+ (company-mode . 2)
+)
