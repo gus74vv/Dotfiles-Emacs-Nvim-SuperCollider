@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name:test
+# key: <test
+# --
+(
+Ndef(\sine, {
+SinOsc.ar([200,205],0.1)
+}).fadeTime_(4).play;
+)
+Ndef(\sine).clear(4)$0

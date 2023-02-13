@@ -17,3 +17,4 @@ require("gustavo.plugins.gitsigns")
 require("gustavo.plugins.scnvim")
 require("gustavo.plugins.alpha")
 
+

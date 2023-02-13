@@ -1,7 +1,13 @@
 local scnvim = require("scnvim")
 local map = scnvim.map
 local map_expr = scnvim.map_expr
+
+require('scnvim.postwin').on_open:append(function()
+  vim.opt_local.wrap = true
+end)
+
 scnvim.setup({
+  ensure_installed = true,
   keymaps = {
     ["<M-e>"] = map("editor.send_line", { "i", "n" }),
     ["<C-e>"] = {
@@ -30,7 +36,6 @@ scnvim.setup({
   editor = {
     force_ft_supercollider = true,
     highlight = {
-      --color = "IncSearch",
       color = "IncSearch",
       type = 'flash',
       flash = {
@@ -68,13 +73,26 @@ scnvim.setup({
       args = { '-F', '$1' } }
     },
   postwin = {
-    auto_toggle_error = true,
-    direction = 'right',
-    size = 25,
+    scrollback = 10000,
+    keymaps = true,
+  horizontal = true,
+    --auto_toggle_error = true,
+    --direction = 'right',
+    --size = 25,
+    float = {
+      direction = "top",
+      enabled = false,
+      height = 24,
+      width = function()
+        return math.max(math.floor(vim.fn.winwidth(0) / 2), 60)
+      end,
+    },
 	},
 })
 
 --scnvim.load_extension("tmux")
+
+
 
 scnvim.load_extension('piano')
 

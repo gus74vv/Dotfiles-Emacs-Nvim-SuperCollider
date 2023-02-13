@@ -1,25 +1,27 @@
 
 ;; ----- smex-history -----
 (
- load-theme
  company-mode
- package-install
  sclang-server-boot
- sclang-recompile
  sclang-start
- run-tidal
+ sclang-main-run
+ load-theme
+ package-install
+ haskell-mode
 )
 
 ;; ----- smex-data -----
 (
- (load-theme . 16)
+ (load-theme . 17)
  (package-install . 2)
  (haskell-mode . 2)
  (package-list-packages-no-fetch . 1)
  (package-delete . 1)
  (run-tidal . 1)
- (sclang-start . 1)
+ (sclang-start . 5)
  (sclang-recompile . 1)
- (sclang-server-boot . 2)
- (company-mode . 2)
+ (sclang-server-boot . 3)
+ (company-mode . 7)
+ (sclang-main-run . 1)
+ (yas-new-snippet . 1)
 )

@@ -23,9 +23,13 @@
 (set-face-attribute 'default nil :font "Fira Mono" :height 120)
 
 (set-frame-size (selected-frame) 110 48)
-(add-to-list 'default-frame-alist '(alpha . 90))
+(add-to-list 'default-frame-alist '(alpha . 97))
 
+;; auto close bracket insertion
+(electric-pair-mode 1)
 
+;; highlight matching paren
+(show-paren-mode 1)
 
 ;;(load-theme 'manoj-dark t)
 
@@ -59,9 +63,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" default))
+   '("944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" default))
  '(package-selected-packages
-   '(company sudo-edit which-key eshell-syntax-highlighting neotree markdown-mode lua-mode haskell-mode smex ivy-rich counsel peep-dired dired-open all-the-icons-dired all-the-icons gcmh general evil-tutor evil-collection evil command-log-mode use-package)))
+   '(yasnippet company sudo-edit which-key eshell-syntax-highlighting neotree markdown-mode lua-mode haskell-mode smex ivy-rich counsel peep-dired dired-open all-the-icons-dired all-the-icons gcmh general evil-tutor evil-collection evil command-log-mode use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -79,6 +83,8 @@
 (require 'sclang)
 
 (setq exec-path (append exec-path '("/Applications/SuperCollider.app/Contents/MacOS/")))
+
+
 
 
 
@@ -415,3 +421,12 @@
 
 
 (modeline-remove-lighter 'evil-collection-unimpaired-mode)
+(modeline-remove-lighter 'counsel-mode)
+(modeline-remove-lighter 'ivy-mode)
+(modeline-remove-lighter 'company-mode)
+
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))                ;; personal snippets
+(yas-global-mode 1)
